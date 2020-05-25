@@ -67,7 +67,7 @@ class HomePageState extends State<HomePage> {
       body: ListView.builder(
         scrollDirection: Axis.vertical,
         itemCount: _kittens.length,
-        itemExtent: 60.0,
+        itemExtent: 160.0,
         itemBuilder: _listItemBuilder,
       ),
     );
@@ -82,23 +82,28 @@ Widget _listItemBuilder(BuildContext context, int index) {
           context: context,
           builder: (context) => _dialogBuilder(context, _kittens[index])),
       child: new Container(
-        padding: const EdgeInsets.only(left: 16.0),
+        padding: EdgeInsets.zero,
+//        height: 120.0,
+//        padding: const EdgeInsets.only(left: 16.0),
         alignment: Alignment.centerLeft,
         child: ListTile(
-          leading:      FadeInImage.assetNetwork(
+          leading: FadeInImage.assetNetwork(
             placeholder: 'assets/logos/loadinggiphy.gif',
-            image: 'https://picsum.photos/250?image=9',
+            image:'https://picsum.photos/250?image=9',
 //        image: kitten.imageUrl,
-            fit: BoxFit.fill,
-          ),
-          title: Text(_kittens[index].title,
-            textDirection: TextDirection.ltr,
-            maxLines: 1,
-            style: TextStyle(
-                fontSize: 20.0,
-            ),
+// width: 50,
+//            height: 50,
 
+            fit: BoxFit.fitWidth,
           ),
+//          title: Text(_kittens[index].title,
+//            textDirection: TextDirection.ltr,
+//            maxLines: 1,
+//            style: TextStyle(
+//                fontSize: 20.0,
+//            ),
+//
+//          ),
         ),
     ),
     ),
